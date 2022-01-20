@@ -1,3 +1,6 @@
+# Bluetooth
+bluetooth.profile.asha.central=true
+
 # Display
 persist.sys.sf.color_mode=0
 
