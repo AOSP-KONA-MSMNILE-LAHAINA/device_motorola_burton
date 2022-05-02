@@ -146,6 +146,9 @@ TARGET_MODULE_ALIASES += \
     wsa881x_dlkm.ko:audio_wsa881x.ko \
     wsa_macro_dlkm.ko:audio_wsa_macro.ko
 
+TARGET_MODULE_ALIASES += \
+    wlan.ko:qca_cld3_qca6390.ko
+
 # Media
 TARGET_USES_ION := true
 
