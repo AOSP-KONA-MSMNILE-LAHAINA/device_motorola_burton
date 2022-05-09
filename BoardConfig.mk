@@ -78,6 +78,10 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_FS_CONFIG_GEN := \
     $(DEVICE_PATH)/configs/config.fs
 
+# Fingerprint
+TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.burton
+TARGET_USES_FOD_ZPOS := true
+
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/configs/vintf/vendor_framework_compatibility_matrix.xml \
