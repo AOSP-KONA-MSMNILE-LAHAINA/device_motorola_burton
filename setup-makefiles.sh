@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=sm8250-common
+DEVICE=burton
 VENDOR=motorola
 
 # Load extract_utils and do some sanity checks

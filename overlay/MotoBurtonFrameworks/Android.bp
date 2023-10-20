@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "MotoSm8250WifiRes",
+    name: "MotoBurtonFrameworks",
     vendor: true,
 }

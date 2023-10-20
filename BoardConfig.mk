@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-COMMON_PATH := device/motorola/sm8250-common
+DEVICE_PATH := device/motorola/burton
 
 include build/make/target/board/BoardConfigMainlineCommon.mk
 

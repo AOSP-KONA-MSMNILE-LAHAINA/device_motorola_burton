@@ -6,7 +6,7 @@
 
 # Inherit from our proprietary vendor. We have this at the top so it can override
 # any potential libraries, configurations, etc from other inherited repositories.
-$(call inherit-product, vendor/motorola/sm8250-common/sm8250-common-vendor.mk)
+$(call inherit-product, vendor/motorola/burton/burton-vendor.mk)
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -147,7 +147,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.moto_sm8250
+    android.hardware.biometrics.fingerprint@2.3-service.burton
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -255,10 +255,9 @@ PRODUCT_PACKAGES += \
     WifiResCommon
 
 PRODUCT_PACKAGES += \
-    MotoSm8250Frameworks \
-    MotoSm8250LineageSDK \
-    MotoSm8250LineageSystemUI \
-    MotoSm8250WifiRes
+    MotoBurtonFrameworks \
+    MotoBurtonPESystemUI \
+    MotoBurtonWifiRes
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -303,7 +302,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0-service.multihal \
     libsensorndkbridge \
-    sensors.moto-sm8250
+    sensors.burton
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 29
