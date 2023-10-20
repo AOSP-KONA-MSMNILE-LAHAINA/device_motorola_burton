@@ -48,7 +48,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 $(call inherit-product, hardware/qcom-caf/sm8250/audio/configs/kona/kona.mk)
-$(call inherit-product, vendor/qcom/opensource/audio/configs/qssi/qssi.mk)
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
