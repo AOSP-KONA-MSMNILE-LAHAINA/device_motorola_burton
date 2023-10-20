@@ -40,8 +40,11 @@ AUDIO_FEATURE_ENABLED_DYNAMIC_LOG := false
 BOARD_SUPPORTS_SOUND_TRIGGER := false
 BOARD_SUPPORTS_SOUND_TRIGGER_HAL := false
 
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := burton
+
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth/include
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 
 # DTB
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
@@ -60,8 +63,12 @@ TARGET_SCREEN_DENSITY := 440
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := \
-    $(COMMON_PATH)/config.fs \
-    $(COMMON_PATH)/moto_config.fs
+    $(DEVICE_PATH)/config.fs \
+    $(DEVICE_PATH)/moto_config.fs
+
+# Fingerprint
+TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.burton
+TARGET_USES_FOD_ZPOS := true
 
 # Hacks
 BUILD_BROKEN_DUP_RULES := true
@@ -89,11 +96,12 @@ BOARD_KERNEL_CMDLINE := \
     swiotlb=2048
 
 BOARD_KERNEL_IMAGE_NAME := Image.gz
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load))
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load))
 TARGET_KERNEL_CONFIG := \
     vendor/kona-perf_defconfig \
     vendor/ext_config/moto-kona.config \
     vendor/debugfs.config
+TARGET_KERNEL_CONFIG += vendor/ext_config/burton-default.config
 TARGET_KERNEL_SOURCE := kernel/motorola/sm8250
 
 # Kernel modules (Audio)
@@ -132,10 +140,10 @@ TARGET_MODULE_ALIASES += \
 
 # Manifest
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(COMMON_PATH)/moto_vfcm.xml \
+    $(DEVICE_PATH)/moto_vfcm.xml \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Media
 TARGET_USES_ION := true
@@ -163,10 +171,10 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := kona
 
 # Properties
-TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
-TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
-TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/system_ext.prop
-TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
@@ -174,7 +182,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_NO_RECOVERY := false
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/init/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 50
 
@@ -185,7 +193,7 @@ VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 # SELinux
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 
-BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # WLAN
 BOARD_HAS_QCOM_WLAN := true

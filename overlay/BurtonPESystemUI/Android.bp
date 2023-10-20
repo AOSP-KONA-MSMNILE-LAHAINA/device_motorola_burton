@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "MotoBurtonPESystemUI",
+    name: "BurtonPESystemUI",
     vendor: true,
 }

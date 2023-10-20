@@ -255,9 +255,10 @@ PRODUCT_PACKAGES += \
     WifiResCommon
 
 PRODUCT_PACKAGES += \
-    MotoBurtonFrameworks \
-    MotoBurtonPESystemUI \
-    MotoBurtonWifiRes
+    BurtonFrameworks \
+    BurtonPESystemUI \
+    BurtonSystemUI \
+    BurtonWifiRes
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

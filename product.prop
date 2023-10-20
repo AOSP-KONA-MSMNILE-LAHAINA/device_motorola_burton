@@ -1,6 +1,10 @@
 # Display
 persist.sys.sf.color_mode=0
 
+# Google Keyboard
+ro.com.google.ime.kb_pad_port_l=10
+ro.com.google.ime.kb_pad_port_r=10
+
 # LMK
 ro.lmk.kill_heaviest_task=true
 ro.lmk.thrashing_limit=60
