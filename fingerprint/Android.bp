@@ -11,6 +11,7 @@ cc_binary {
     ],
 
     shared_libs: [
+        "libbinder_ndk",
         "libcutils",
         "liblog",
         "libhidlbase",
@@ -19,6 +20,7 @@ cc_binary {
         "android.hardware.biometrics.fingerprint@2.3",
         "android.hardware.biometrics.fingerprint@2.2",
         "android.hardware.biometrics.fingerprint@2.1",
+        "android.hardware.power-V1-ndk",
         "vendor.goodix.hardware.biometrics.fingerprint@2.1",
     ],
 }

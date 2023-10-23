@@ -43,6 +43,9 @@ namespace fingerprint {
 namespace V2_3 {
 namespace implementation {
 
+// Power AIDL instance name
+static const std::string kPowerInstance = std::string(IPower::descriptor) + "/default";
+
 static bool readBool(int fd) {
     char c;
     int rc;
@@ -79,6 +82,8 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
     }
 
     mGoodixFingerprintDaemon = IGoodixFingerprintDaemon::getService();
+    mPowerService = IPower::fromBinder(ndk::SpAIBinder(
+        AServiceManager_getService(kPowerInstance.c_str())));
 
     std::thread([this]() {
         int fd = open(FOD_UI_PATH, O_RDONLY);
@@ -99,9 +104,10 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
                 ALOGE("failed to poll fd, err: %d", rc);
                 continue;
             }
-
-            mGoodixFingerprintDaemon->sendCommand(readBool(fd) ? NOTIFY_FINGER_DOWN
+            bool isFodUi = readBool(fd);
+            mGoodixFingerprintDaemon->sendCommand(isFodUi ? NOTIFY_FINGER_DOWN
                 : NOTIFY_FINGER_UP, {}, [](int, const hidl_vec<signed char>&) {});
+            mPowerService->setMode(Mode::LAUNCH, isFodUi);
         }
     }).detach();
 }
@@ -126,10 +132,12 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t) {
 }
 
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
+    mPowerService->setMode(Mode::LAUNCH, true);
     return Void();
 }
 
 Return<void> BiometricsFingerprint::onFingerUp() {
+    mPowerService->setMode(Mode::LAUNCH, false);
     return Void();
 }
 
