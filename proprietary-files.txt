@@ -507,7 +507,7 @@ product/lib64/libSNPE.so|acc9722b3154685f34ab2d78581c24b35cdc2da4
 product/lib64/libSoftwareISP.so|4ddc5a888765f7c4fada6ae741e30a03c68be73e
 product/lib64/libtiff.so|6b554008e77e469fcf0a652e018138d10f3550d7
 product/lib64/libzxing-core.so|18b1f6ca0a0864f6fe62193fa4779d581b8e5e28
--product/priv-app/MotCamera2/MotCamera2.apk;OVERRIDES=Camera2|a077dbe8fbf4fcae44d85784a16809016ed020e6
+-product/priv-app/MotCamera2/MotCamera2.apk;OVERRIDES=Aperture,Camera2
 system_ext/etc/public.libraries-motocamera.txt
 system_ext/lib64/libmcf_native_window_helper.motocamera.so
 
@@ -596,12 +596,9 @@ vendor/lib/libdiag.so
 vendor/lib64/libdiag.so
 
 # Display
-vendor/bin/hw/vendor.display.color@1.0-service
-vendor/etc/init/vendor.display.color@1.0-service.rc
 vendor/lib64/libdisp-aba.so
 vendor/lib64/libdisplayqos.so
 vendor/lib64/libdisplayskuutils.so
-vendor/lib64/libdpps.so
 vendor/lib64/libhdr_tm.so
 vendor/lib64/libmm-hdcpmgr.so
 vendor/lib64/libqseed3.so
@@ -611,13 +608,6 @@ vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
-vendor/lib64/vendor.display.color@1.0.so
-vendor/lib64/vendor.display.color@1.1.so
-vendor/lib64/vendor.display.color@1.2.so
-vendor/lib64/vendor.display.color@1.3.so
-vendor/lib64/vendor.display.color@1.4.so
-vendor/lib64/vendor.display.color@1.5.so
-vendor/lib64/vendor.display.postproc@1.0.so
 
 # Display (QDCM)
 vendor/etc/qdcm_calib_data_mipi_mot_cmd_boe_1080p_dsc_667.xml
@@ -973,6 +963,13 @@ vendor/lib64/libqmimotext.so
 vendor/lib64/libqsap_sdk.so
 
 # QCRIL
+etc/permissions/privapp-permissions-qti.xml
+-product/app/uimgbaservice/uimgbaservice.apk
+product/etc/permissions/UimGba.xml
+product/etc/permissions/UimGbaManager.xml
+product/framework/uimgbalibrary.jar
+product/framework/uimgbamanagerlibrary.jar
+product/etc/permissions/telephony_product_privapp-permissions-qti.xml
 -system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 -system_ext/app/QtiTelephony/QtiTelephony.apk
 system_ext/etc/permissions/privapp-permissions-qti-system-ext.xml
@@ -1066,6 +1063,9 @@ vendor/radio/qcril_database/upgrade/36_version_qcrildb.sql
 vendor/radio/qcril_database/qcril.db
 
 # QCRIL - Moto
+etc/permissions/moto-ims-ext.xml:system_ext/etc/permissions/moto-ims-ext.xml
+etc/permissions/moto-telephony.xml:system_ext/etc/permissions/moto-telephony.xml
+framework/moto-ims-ext.jar:system_ext/framework/moto-ims-ext.jar
 framework/moto-telephony.jar:system_ext/framework/moto-telephony.jar
 
 # QSEECOM

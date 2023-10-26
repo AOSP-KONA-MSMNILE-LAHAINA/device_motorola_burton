@@ -1,7 +1,15 @@
+# Camera
+persist.vendor.camera.physical.num=4
+persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.motorola.camera2,org.lineageos.aperture
+ro.mot.build.customerid=retail
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.motorola.camera2,org.lineageos.aperture
+persist.vendor.camera.expose.aux=1
+
 # IMS
 ro.qcom.ims.use_moto_vt_ext=true
 
 # Media
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.media.recorder-max-base-layer-fps=60
 

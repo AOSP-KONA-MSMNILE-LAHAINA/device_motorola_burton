@@ -13,4 +13,21 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl">
+        <name>motorola.hardware.audio.adspd</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IADSP</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IADSP/default</fqname>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.wifi.supplicant</name>
+        <interface>
+            <name>ISupplicant</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>

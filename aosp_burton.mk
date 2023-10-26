@@ -13,6 +13,12 @@ $(call inherit-product, device/motorola/burton/kona.mk)
 # Inherit from the Lineage configuration.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
+# Bootanimation
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Pixel Experience additions
+TARGET_SUPPORTS_QUICK_TAP := true
+
 PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := burton
 PRODUCT_MANUFACTURER := motorola
