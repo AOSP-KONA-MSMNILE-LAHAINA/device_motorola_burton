@@ -1,0 +1,11 @@
+# Bluetooth
+persist.vendor.bt.a2dp.aac_whitelist=false
+
+# Camera
+vendor.camera.aux.packagelist=com.android.camera,org.codeaurora.snapcam
+
+# Charger
+ro.charger.enable_suspend=1
+
+# Display
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
