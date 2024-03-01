@@ -41,6 +41,10 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Board
 TARGET_BOARD_PLATFORM := kona
 
+# Fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # Init
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
