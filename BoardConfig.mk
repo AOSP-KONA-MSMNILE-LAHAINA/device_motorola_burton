@@ -67,6 +67,10 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 # DTBO
 BOARD_KERNEL_SEPARATED_DTBO := true
 
+# HIDL
+DEVICE_MANIFEST_FILE += \
+    $(DEVICE_PATH)/configs/vintf/manifest.xml
+
 # Kernel
 BOARD_KERNEL_CMDLINE := \
     androidboot.console=ttyMSM0 \
