@@ -120,6 +120,10 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
+# Kernel
+KERNEL_MODULES_INSTALL := dlkm
+KERNEL_MODULES_OUT := $(OUT_DIR)/target/product/burton/$(KERNEL_MODULES_INSTALL)/lib/modules
+
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor
