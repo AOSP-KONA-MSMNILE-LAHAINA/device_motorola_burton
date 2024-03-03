@@ -110,6 +110,22 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/$(HOST_OS)
 TARGET_KERNEL_CLANG_COMPILE := true
 KERNEL_DEFCONFIG := vendor/burton_defconfig
 
+# Kernel modules
+BOARD_RECOVERY_KERNEL_MODULES := \
+    $(KERNEL_MODULES_OUT)/mmi_annotate.ko \
+    $(KERNEL_MODULES_OUT)/mmi_info.ko \
+    $(KERNEL_MODULES_OUT)/mmi_relay.ko \
+    $(KERNEL_MODULES_OUT)/sensors_class.ko \
+    $(KERNEL_MODULES_OUT)/synaptics_core_module.ko \
+    $(KERNEL_MODULES_OUT)/synaptics_device.ko \
+    $(KERNEL_MODULES_OUT)/synaptics_diagnostics.ko \
+    $(KERNEL_MODULES_OUT)/synaptics_i2c.ko \
+    $(KERNEL_MODULES_OUT)/synaptics_recovery.ko \
+    $(KERNEL_MODULES_OUT)/synaptics_reflash.ko \
+    $(KERNEL_MODULES_OUT)/synaptics_testing.ko \
+    $(KERNEL_MODULES_OUT)/synaptics_zeroflash.ko \
+    $(KERNEL_MODULES_OUT)/touchscreen_mmi.ko
+
 BOARD_VENDOR_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/aov_trigger.ko \
     $(KERNEL_MODULES_OUT)/arizona-ldo1.ko \
