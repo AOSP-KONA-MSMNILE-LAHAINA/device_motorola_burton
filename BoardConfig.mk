@@ -167,8 +167,7 @@ BOARD_VENDOR_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/watchdog_cpu_ctx.ko \
     $(KERNEL_MODULES_OUT)/watchdogtest.ko \
     $(KERNEL_MODULES_OUT)/wigig_sensing.ko \
-    $(KERNEL_MODULES_OUT)/wil6210.ko \
-    $(KERNEL_MODULES_OUT)/wlan.ko
+    $(KERNEL_MODULES_OUT)/wil6210.ko
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
