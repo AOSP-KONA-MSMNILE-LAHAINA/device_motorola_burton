@@ -111,12 +111,9 @@ TARGET_KERNEL_CLANG_COMPILE := true
 KERNEL_DEFCONFIG := vendor/burton_defconfig
 
 BOARD_VENDOR_KERNEL_MODULES := \
-    $(KERNEL_MODULES_OUT)/adsp_loader_dlkm.ko \
     $(KERNEL_MODULES_OUT)/aov_trigger.ko \
-    $(KERNEL_MODULES_OUT)/apr_dlkm.ko \
     $(KERNEL_MODULES_OUT)/arizona-ldo1.ko \
     $(KERNEL_MODULES_OUT)/arizona-micsupp.ko \
-    $(KERNEL_MODULES_OUT)/bolero_cdc_dlkm.ko \
     $(KERNEL_MODULES_OUT)/cci_intf.ko \
     $(KERNEL_MODULES_OUT)/cirrus_cs35l41-i2c.ko \
     $(KERNEL_MODULES_OUT)/cirrus_cs35l41-spi.ko \
@@ -135,12 +132,9 @@ BOARD_VENDOR_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/gpio-madera.ko \
     $(KERNEL_MODULES_OUT)/gpio-tacna.ko \
     $(KERNEL_MODULES_OUT)/gspca_main.ko \
-    $(KERNEL_MODULES_OUT)/hdmi_dlkm.ko \
     $(KERNEL_MODULES_OUT)/lcd.ko \
     $(KERNEL_MODULES_OUT)/llcc_perfmon.ko \
-    $(KERNEL_MODULES_OUT)/machine_dlkm.ko \
     $(KERNEL_MODULES_OUT)/madera-pinctrl.ko \
-    $(KERNEL_MODULES_OUT)/mbhc_dlkm.ko \
     $(KERNEL_MODULES_OUT)/mmi_annotate.ko \
     $(KERNEL_MODULES_OUT)/mmi_info.ko \
     $(KERNEL_MODULES_OUT)/mmi_relay.ko \
@@ -148,30 +142,18 @@ BOARD_VENDOR_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/mpq-adapter.ko \
     $(KERNEL_MODULES_OUT)/mpq-dmx-hw-plugin.ko \
     $(KERNEL_MODULES_OUT)/msm_11ad_proxy.ko \
-    $(KERNEL_MODULES_OUT)/native_dlkm.ko \
     $(KERNEL_MODULES_OUT)/p938x_charger.ko \
-    $(KERNEL_MODULES_OUT)/pinctrl_lpi_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/pinctrl_wcd_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/platform_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/q6_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/q6_notifier_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/q6_pdr_dlkm.ko \
     $(KERNEL_MODULES_OUT)/qpnp-power-on-mmi.ko \
     $(KERNEL_MODULES_OUT)/qpnp-smbcharger-mmi.ko \
     $(KERNEL_MODULES_OUT)/qpnp_adaptive_charge.ko \
     $(KERNEL_MODULES_OUT)/rdbg.ko \
     $(KERNEL_MODULES_OUT)/rmnet_perf.ko \
     $(KERNEL_MODULES_OUT)/rmnet_shs.ko \
-    $(KERNEL_MODULES_OUT)/rx_macro_dlkm.ko \
     $(KERNEL_MODULES_OUT)/sec_mmi.ko \
     $(KERNEL_MODULES_OUT)/sensors_class.ko \
     $(KERNEL_MODULES_OUT)/slg51000.ko \
-    $(KERNEL_MODULES_OUT)/snd_event_dlkm.ko \
     $(KERNEL_MODULES_OUT)/st21nfc.ko \
     $(KERNEL_MODULES_OUT)/stmvl53l1.ko \
-    $(KERNEL_MODULES_OUT)/stub_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/swr_ctrl_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/swr_dlkm.ko \
     $(KERNEL_MODULES_OUT)/synaptics_core_module.ko \
     $(KERNEL_MODULES_OUT)/synaptics_device.ko \
     $(KERNEL_MODULES_OUT)/synaptics_diagnostics.ko \
@@ -181,21 +163,12 @@ BOARD_VENDOR_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/synaptics_testing.ko \
     $(KERNEL_MODULES_OUT)/synaptics_zeroflash.ko \
     $(KERNEL_MODULES_OUT)/touchscreen_mmi.ko \
-    $(KERNEL_MODULES_OUT)/tx_macro_dlkm.ko \
     $(KERNEL_MODULES_OUT)/tzlog_dump.ko \
-    $(KERNEL_MODULES_OUT)/usf_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/va_macro_dlkm.ko \
     $(KERNEL_MODULES_OUT)/watchdog_cpu_ctx.ko \
     $(KERNEL_MODULES_OUT)/watchdogtest.ko \
-    $(KERNEL_MODULES_OUT)/wcd938x_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/wcd938x_slave_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/wcd9xxx_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/wcd_core_dlkm.ko \
     $(KERNEL_MODULES_OUT)/wigig_sensing.ko \
     $(KERNEL_MODULES_OUT)/wil6210.ko \
-    $(KERNEL_MODULES_OUT)/wlan.ko \
-    $(KERNEL_MODULES_OUT)/wsa881x_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/wsa_macro_dlkm.ko
+    $(KERNEL_MODULES_OUT)/wlan.ko
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
