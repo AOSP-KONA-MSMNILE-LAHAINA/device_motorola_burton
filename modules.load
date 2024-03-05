@@ -28,7 +28,6 @@ audio_wcd9xxx.ko
 audio_wcd_core.ko
 audio_wsa881x.ko
 audio_wsa_macro.ko
-aw8697.ko
 cci_intf.ko
 cirrus_cs35l41-i2c.ko
 cirrus_cs35l41.ko
@@ -53,7 +52,6 @@ madera-pinctrl.ko
 mmi_annotate.ko
 mmi_info.ko
 mmi_relay.ko
-mmi_sys_temp.ko
 moto_f_usbnet.ko
 mpq-adapter.ko
 mpq-dmx-hw-plugin.ko
@@ -68,7 +66,6 @@ sec_mmi.ko
 sensors_class.ko
 slg51000.ko
 stmvl53l1.ko
-sx933x_sar.ko
 synaptics_core_module.ko
 synaptics_device.ko
 synaptics_diagnostics.ko
