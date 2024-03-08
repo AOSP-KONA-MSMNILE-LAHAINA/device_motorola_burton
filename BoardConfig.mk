@@ -116,7 +116,11 @@ BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
 TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc
 TARGET_KERNEL_CLANG_COMPILE := true
 
-TARGET_KERNEL_CONFIG := vendor/burton_defconfig
+TARGET_KERNEL_CONFIG := \
+    vendor/kona-perf_defconfig \
+    vendor/ext_config/burton-default.config \
+    vendor/ext_config/moto-kona.config \
+    vendor/debugfs.config
 TARGET_KERNEL_SOURCE := kernel/motorola/sm8250
 
 # Kernel modules (Audio)
