@@ -13,6 +13,9 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/motorola/burton/burton-vendor.mk)
 
+# HIDL HALs
+$(call inherit-product, $(LOCAL_PATH)/hidl.mk)
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
@@ -341,12 +344,12 @@ PRODUCT_PACKAGES += \
 # USB
 $(call inherit-product, vendor/qcom/opensource/usb/vendor_product.mk)
 
+PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/usb/etc
+TARGET_KERNEL_VERSION := 4.19
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml
-
-PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/usb/etc
-TARGET_KERNEL_VERSION := 4.19
 
 # Verified Boot
 PRODUCT_COPY_FILES += \
@@ -369,6 +372,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.wifi.supplicant@2.2.vendor \
     wpa_supplicant \
     wpa_supplicant.conf
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/wlan/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wlan/WCNSS_qcom_cfg_qca6390.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/qca6390/WCNSS_qcom_cfg.ini
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.direct.xml \
