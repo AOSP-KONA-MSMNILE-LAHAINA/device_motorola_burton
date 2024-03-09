@@ -333,6 +333,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vndservicemanager
 
+# Vibrator
+$(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
+
 # WLAN
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
