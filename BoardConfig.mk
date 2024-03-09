@@ -38,6 +38,7 @@ BOARD_SUPPORTS_SOUND_TRIGGER_HAL := false
 
 # AVB
 BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 
 BOARD_AVB_VBMETA_SYSTEM := product system system_ext
