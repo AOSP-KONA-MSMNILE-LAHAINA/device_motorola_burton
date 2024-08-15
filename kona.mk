@@ -264,6 +264,10 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti.vendor
 
+# RFS MDM MPSS symlinks
+PRODUCT_PACKAGES += \
+    rfs_mdm_mpss_readonly_vendor_fsg_symlink
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0-service.multihal \
