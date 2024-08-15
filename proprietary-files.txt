@@ -650,7 +650,7 @@ vendor/bin/init.qcom.early_boot.sh
 vendor/bin/init.qcom.post_boot.sh
 vendor/bin/init.qcom.sh
 vendor/bin/init.qti.dcvs.sh
-vendor/bin/motobox
+vendor/bin/motobox;SYMLINK=vendor/bin/expat
 vendor/etc/init/hw/init.mmi.charge_only.rc
 vendor/etc/init/hw/init.mmi.chipset.rc
 vendor/etc/init/hw/init.mmi.overlay.rc
