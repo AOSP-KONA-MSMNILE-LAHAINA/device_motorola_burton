@@ -13,6 +13,9 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/motorola/burton/burton-vendor.mk)
 
+# Include QCOM common
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
+
 # HIDL HALs
 $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
 
