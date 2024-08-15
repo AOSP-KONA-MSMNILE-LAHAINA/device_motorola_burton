@@ -102,9 +102,11 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
+    libexif.vendor:64 \
     libcamera2ndk_vendor \
     libdng_sdk.vendor \
     libgui_vendor \
+    libyuv.vendor:64 \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
@@ -202,6 +204,14 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
+
+# Misc
+PRODUCT_PACKAGES += \
+    libjsoncpp.vendor:64 \
+    libnetutils.vendor:64 \
+    libsqlite.vendor:64 \
+    libsysutils.vendor \
+    libpng.vendor
 
 # NFC
 PRODUCT_PACKAGES += \
