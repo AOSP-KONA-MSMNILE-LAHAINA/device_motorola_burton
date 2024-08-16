@@ -11,18 +11,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/motorola/burton/kona.mk)
 
 # Inherit from the Lineage configuration.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1080
-
-# Pixel Experience additions
-TARGET_SUPPORTS_QUICK_TAP := true
 
 PRODUCT_BRAND := Motorola
 PRODUCT_DEVICE := burton
 PRODUCT_MANUFACTURER := Motorola
 PRODUCT_MODEL := Motorola Edge Plus
-PRODUCT_NAME := aosp_burton
+PRODUCT_NAME := lineage_burton
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola

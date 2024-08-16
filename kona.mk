@@ -19,6 +19,10 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 # HIDL HALs
 $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
 
+# Allow Missing Dependencies
+PRODUCT_ENFORCE_PACKAGES_EXIST := false
+ALLOW_MISSING_DEPENDENCIES := true
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
@@ -138,7 +142,7 @@ PRODUCT_COPY_FILES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4-service.clearkey
+    android.hardware.drm-service.clearkey
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -194,7 +198,8 @@ PRODUCT_COPY_FILES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    libavservices_minijail.vendor
+    libavservices_minijail.vendor \
+    libstagefright_softomx_plugin.vendor
 
 $(call inherit-product, hardware/qcom-caf/sm8250/media/conf_files/kona/kona.mk)
 $(call inherit-product, hardware/qcom-caf/sm8250/media/product.mk)
@@ -214,6 +219,11 @@ PRODUCT_PACKAGES += \
     libnetutils.vendor:64 \
     libsqlite.vendor:64 \
     libsysutils.vendor \
+    libprotobuf-cpp-full \
+    libprotobuf-cpp-full-3.9.1-vendorcompat \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat \
+    librmnetctl \
+    libxml2 \
     libpng.vendor
 
 # NFC
@@ -288,9 +298,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
 
 # Shipping API level
-BOARD_API_LEVEL := 30
-BOARD_SHIPPING_API_LEVEL := $(BOARD_API_LEVEL)
-PRODUCT_SHIPPING_API_LEVEL := $(BOARD_API_LEVEL)
+BOARD_SHIPPING_API_LEVEL := 30
+PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Storage
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -333,14 +342,16 @@ PRODUCT_PACKAGES += \
     update_verifier
 
 # USB
-$(call inherit-product, vendor/qcom/opensource/usb/vendor_product.mk)
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.3-service-qti \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml
 
 PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/usb/etc
-TARGET_KERNEL_VERSION := 4.19
 
 # Verified Boot
 PRODUCT_COPY_FILES += \

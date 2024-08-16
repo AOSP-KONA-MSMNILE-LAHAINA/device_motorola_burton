@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_burton.mk
+    $(LOCAL_DIR)/lineage_burton.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_burton-eng \
-    aosp_burton-user \
-    aosp_burton-userdebug
+    lineage_burton-eng \
+    lineage_burton-user \
+    lineage_burton-userdebug
